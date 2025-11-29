@@ -26,3 +26,12 @@
 .section:nth-child(odd) {
   background-color: var(--bg-alt);
 }
+
+.contactLink {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
