@@ -2,6 +2,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Header from '../components/Header';
+import SEO from '../components/SEO';
 import About from '../components/About';
 import Experience from '../components/Experience';
 import Skills from '../components/Skills';
@@ -11,10 +12,7 @@ import styles from '../styles/Home.module.css';
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Vinnie Baker | Portfolio</title>
-        <meta name="description" content="Vinnie Baker's personal portfolio" />
-      </Head>
+      <SEO />
 
       <Header />
 

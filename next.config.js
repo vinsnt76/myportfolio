@@ -1,10 +1,12 @@
 module.exports = {
   reactStrictMode: true,
+
+  // Enable static export for deployment to hosts like GitHub Pages
+  output: 'export',
+
+  // Disable image optimization, as it requires a server.
+  // This is necessary for static-only hosts.
   images: {
-    domains: ['example.com'], // Replace with your image domains
-  },
-  webpack: (config) => {
-    // Custom webpack configurations can be added here
-    return config;
+    unoptimized: true,
   },
 };
