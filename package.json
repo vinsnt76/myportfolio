@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "verify": "ts-node ./scripts/verify-config.ts"
+    "verify": "ts-node ./scripts/verify-config.ts",
+    "prepare": "husky"
   },
   "keywords": [
     "portfolio",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
+    "husky": "^9.0.11",
     "typescript": "^5.5.3"
   }
 }
