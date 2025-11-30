@@ -1,25 +1,32 @@
-// src/hooks/useTheme.ts
 import { useEffect, useState } from 'react';
 
-export const useTheme = () => {
-  const [theme, setTheme] = useState('light');
+const isServer = typeof window === 'undefined';
 
-  // Effect to set theme from localStorage on initial load
+export const useTheme = () => {
+  // Initialize state from localStorage if available, otherwise default to 'light'
+  const [theme, setTheme] = useState(() => {
+    if (isServer) {
+      return 'light';
+    }
+    return localStorage.getItem('theme') || 'light';
+  });
+
+  // Effect to apply the theme to the document and save to localStorage
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    if (savedTheme === 'dark') {
+    if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, []);
+    // Don't run this on the server
+    if (!isServer) {
+      localStorage.setItem('theme', theme);
+    }
+  }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark');
   };
 
   return { theme, toggleTheme };

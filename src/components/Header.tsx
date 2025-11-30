@@ -1,39 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useScrollspy } from '../hooks/useScrollspy';
+import { useTheme } from '../hooks/useTheme';
 import styles from '../styles/Header.module.css';
-import useScrollspy from '../hooks/useScrollspy';
-import useTheme from '../hooks/useTheme';
 
-const sections = ['hero', 'about', 'experience', 'skills', 'projects', 'contact'];
+const SECTIONS = ['hero', 'about', 'experience', 'skills', 'projects', 'contact'];
 
 const Header: React.FC = () => {
-  const activeId = useScrollspy(sections, 80);
+  const activeSection = useScrollspy(SECTIONS);
   const { theme, toggleTheme } = useTheme();
-  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <div className={styles.logo}>VB</div>
-
-        <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </button>
-
-        <ul className={`${styles.navList} ${menuOpen ? styles.open : ''}`}>
-          {sections.map((id) => (
-            <li key={id}>
+        <div className={styles.logo}>Vinnie Baker</div>
+        <ul className={styles.navList}>
+          {SECTIONS.map((section) => (
+            <li key={section}>
               <a
-                href={`#${id}`}
-                className={activeId === id ? styles.active : ''}
-                onClick={() => setMenuOpen(false)}
+                href={`#${section}`}
+                className={`${styles.navLink} ${activeSection === section ? styles.navLinkActive : ''}`}
               >
-                {id.charAt(0).toUpperCase() + id.slice(1)}
+                {section.charAt(0).toUpperCase() + section.slice(1)}
               </a>
             </li>
           ))}
         </ul>
-
-        <button className={styles.themeToggle} onClick={toggleTheme}>
+        <button onClick={toggleTheme} className={styles.themeToggle} aria-label="Toggle theme">
           {theme === 'light' ? '🌙' : '☀️'}
         </button>
       </nav>
