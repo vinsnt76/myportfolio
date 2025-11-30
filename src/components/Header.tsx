@@ -1,6 +1,6 @@
 import React from 'react';
-import { useTheme } from '../hooks/useTheme';
-import styles from '../styles/Header.module.css';
+import { useTheme } from '@/hooks/useTheme';
+import styles from '@/styles/Header.module.css';
 
 const SECTIONS = ['hero', 'about', 'experience', 'skills', 'projects', 'contact'];
 
