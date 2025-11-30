@@ -1,13 +1,9 @@
-// src/components/Footer.tsx
-import styles from '@/styles/Home.module.css';
+import React from 'react';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+const Footer: React.FC = () => {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>
-        <p>&copy; {currentYear} Vinnie Baker. All Rights Reserved.</p>
-      </div>
+    <footer style={{ textAlign: 'center', padding: '2rem' }}>
+      <p>© {new Date().getFullYear()} Vinnie Baker. All Rights Reserved.</p>
     </footer>
   );
 };

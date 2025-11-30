@@ -38,7 +38,12 @@ export default function Home() {
             </section>
             <section id="contact" className={styles.section} aria-labelledby="contact-heading">
               <h2 id="contact-heading">Contact</h2>
-              <p>Feel free to reach out via email at <a href="mailto:vinnie.baker@example.com" className={styles.contactLink}>vinnie.baker@example.com</a>.</p>
+              <p>
+                Feel free to reach out via email at{' '}
+                <a href="mailto:vinnie.baker@example.com" className={styles.contactLink}>
+                  vinnie.baker@example.com
+                </a>.
+              </p>
             </section>
           </div>
         </ErrorBoundary>
