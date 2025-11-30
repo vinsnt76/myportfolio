@@ -1,6 +1,6 @@
 // src/components/Header/index.tsx
-import { useScrollspy } from '../../hooks/useScrollspy';
-import { useTheme } from '../../hooks/useTheme';
+import { useScrollspy } from 'hooks/useScrollspy';
+import { useTheme } from 'hooks/useTheme';
 import styles from './Header.module.css';
 
 const SECTIONS = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];

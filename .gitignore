@@ -1,0 +1,5 @@
+# Ignore all node_modules
+node_modules/
+
+# Ignore platform-specific SWC binaries
+**/swc-*/next-swc.*.node
