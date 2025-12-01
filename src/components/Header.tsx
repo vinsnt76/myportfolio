@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from '@/hooks/useTheme';
 import styles from '@/styles/Header.module.css';
 
-const SECTIONS = ['hero', 'about', 'experience', 'skills', 'projects', 'contact'];
+const SECTIONS = ['welcome', 'about', 'experience', 'skills', 'projects', 'contact'];
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
