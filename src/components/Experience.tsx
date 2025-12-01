@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Experience: React.FC = () => {
-  return <p>A timeline of my professional roles and accomplishments.</p>;
+  return (
+    <div className="text-center">
+      <h2 className="text-4xl font-bold">Experience</h2>
+    </div>
+  );
 };
 
 export default Experience;

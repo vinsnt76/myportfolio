@@ -1,7 +1,11 @@
 import React from 'react';
 
 const About: React.FC = () => {
-  return <p>Details about my professional background and passion for technology.</p>;
+  return (
+    <div className="text-center">
+      <h2 className="text-4xl font-bold">About Me</h2>
+    </div>
+  );
 };
 
 export default About;
