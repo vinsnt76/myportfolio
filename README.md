@@ -2,26 +2,25 @@
 ## 📄 `README.md` — Portfolio Project Overview
 
 ```markdown
-# Vinnie Baker – Portfolio
+# Vinnie Baker - Modern Portfolio Website
 
-Welcome to my personal portfolio site, built with **Next.js + TypeScript**.  
-This project showcases my experience in technical architecture, automation, design, and digital strategy.
+This repository contains the source code for a sleek, modern, and responsive personal portfolio website for Vinnie Baker. It is built with Next.js, TypeScript, and styled with Tailwind CSS, featuring a clean design and a great user experience.
 
 ---
 
 ## 🚀 Live Preview
 
-[Coming Soon – Deployed via Vercel]
+**Live Demo:** [portfolio-chi-wheat-49.vercel.app](https://portfolio-chi-wheat-49.vercel.app/#welcome)
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Framework**: Next.js (latest)
-- **Language**: TypeScript
-- **Styling**: CSS Modules (or Tailwind CSS)
-- **Deployment**: Vercel (preferred), GitHub Pages (static export)
-- **Version Control**: GitHub
+-   **Framework**: Next.js
+-   **Language**: TypeScript
+-   **Styling**: Tailwind CSS
+-   **Icons**: Lucide React
+-   **Deployment**: Vercel
 
 ---
 
@@ -76,23 +75,21 @@ npm run start
 
 ## 🧠 Features
 
-- Sticky header with anchor links and scrollspy
-- Dark mode toggle with local storage
-- Responsive layout with mobile hamburger menu
-- Modular sections: Hero, About, Experience, Projects, Skills, Certifications, Education, Contact
-- Semantic HTML and accessible markup
-- Custom hooks: `useScrollspy`, `useTheme`
+-   **Modern UI/UX:** A clean, "pill-style" sticky header and smooth-scrolling navigation.
+-   **Responsive Design:** Fully responsive layout that looks great on desktops, tablets, and mobile devices.
+-   **Light & Dark Mode:** A theme toggle that respects user preference and persists the choice in `localStorage`.
+-   **Component-Based Architecture:** Built with reusable React components for maintainability and scalability.
+-   **Centralized Branding:** Design tokens (colors, fonts, spacing) are managed in a global CSS file for site-wide consistency.
+-   **Optimized Font Loading:** Custom fonts (Montserrat, IBM Plex Sans, Raleway) are efficiently loaded from Google Fonts.
 
 ---
 
 ## 🤝 Collaboration
 
-Feel free to fork, clone, or contribute.  
-If you're a recruiter or collaborator reviewing this project, check out:
-
-- `agent-instructions.md` for technical scaffolding
-- `src/components/` for modular architecture
-- `src/pages/profile.tsx` for the full scrollable layout
+This project demonstrates a modern frontend workflow. Feel free to fork, clone, or contribute. If you're a recruiter or collaborator reviewing this project, pay special attention to:
+-   `src/components/Header.tsx` for a complex, self-contained component with state management.
+-   `src/hooks/useTheme.ts` for a reusable custom hook that interacts with the DOM.
+-   `tailwind.config.ts` and `src/styles/globals.css` for the design system implementation.
 
 ---
 
