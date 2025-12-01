@@ -1,42 +1,58 @@
 {
-  "name": "portfolio",
+  "name": "myportfolio",
   "version": "1.0.0",
   "type": "module",
-  "description": "A personal portfolio showcasing projects and skills.",
-  "homepage": "https://portfolio-vinsnt76.vercel.app",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vinsnt76/portfolio.git"
-  },
+  "description": "Vinnie Baker - Modern Portfolio Website",
+  "main": "next.config.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "clean": "rimraf .next node_modules",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinsnt76/portfolio.git"
   },
   "keywords": [
-    "portfolio",
     "nextjs",
     "react",
-    "typescript"
+    "typescript",
+    "tailwind",
+    "portfolio",
+    "vincent-baker"
   ],
-  "author": "Your Name",
+  "author": "Vincent Baker",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinsnt76/portfolio/issues"
+  },
+  "homepage": "https://github.com/vinsnt76/portfolio#readme",
   "dependencies": {
-    "lucide-react": "^0.555.0",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "resend": "^6.5.2"
+    "next": "14.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.11.30",
     "@types/react": "^18.3.3",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "prettier": "^3.7.3",
-    "tailwindcss": "^3.4.0",
-    "typescript": "^5.5.3"
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-tailwindcss": "^3.18.2",
+    "husky": "^9.1.7",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "rimraf": "^6.1.2",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5"
   }
 }
