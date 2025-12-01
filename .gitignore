@@ -6,3 +6,6 @@ node_modules/
 
 # Ignore platform-specific SWC binaries
 **/swc-*/next-swc.*.node
+
+# Ignore all markdown files (development notes)
+*.md
