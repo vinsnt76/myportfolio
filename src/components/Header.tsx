@@ -4,6 +4,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { useScrollLogic } from '@/hooks/useScrollLogic';
 import { useMenuToggle } from '@/hooks/useMenuToggle';
 import { MobileMenu } from './MobileMenu';
+import { useScrollspy } from '@/hooks/useScrollspy';
 import { useConsent } from '@/context/ConsentContext';
 import clsx from 'clsx';
 
@@ -33,6 +34,7 @@ const Header: React.FC = () => {
   const { userHasConsented } = useConsent(); // Using the export from ConsentContext.tsx
   const { theme, toggleTheme } = useTheme(userHasConsented); // Passed consent state
   const { isSticky } = useScrollLogic(); // Already correct
+  const activeSection = useScrollspy(navItems.map(item => item.href));
   const { isMenuOpen, toggleMenu, closeMenu } = useMenuToggle();
 
   // --- Class Logic Consolidation ---
@@ -58,7 +60,7 @@ const Header: React.FC = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex flex-grow justify-center space-x-6">
           {navItems.map((item) => (
-            <a key={item.name} href={`#${item.href}`} onClick={() => scrollToSection(item.href)} className={`text-sm font-medium hover:text-blue-400 transition-colors ${textColor}`}>
+            <a key={item.name} href={`#${item.href}`} onClick={() => scrollToSection(item.href)} className={clsx('text-sm font-medium hover:text-blue-400 transition-colors', textColor, { 'text-blue-400': activeSection === item.href })}>
               {item.name}
             </a>
           ))}
