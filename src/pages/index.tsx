@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout';
 import Projects from '@/components/Projects';
-import Contact from '@/components/contact';
+import Contact from '@/components/ContactSection';
 import About from '@/components/About'; // Assuming this component exists or will be created
 import Experience from '@/components/Experience'; // Assuming this component exists or will be created
 

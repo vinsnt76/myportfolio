@@ -1,13 +1,18 @@
 import { useState, useCallback } from 'react';
 
 /**
- * Custom hook to manage the open/closed state of the mobile menu.
+ * Custom hook to manage the state and control of a toggleable menu.
  */
-export const useMenuToggle = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export const useMenuToggle = (initialState: boolean = false) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(initialState);
 
-  const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), []);
-  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen(prev => !prev);
+  }, []);
+
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
 
   return { isMenuOpen, toggleMenu, closeMenu };
 };

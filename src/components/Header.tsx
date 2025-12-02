@@ -5,7 +5,6 @@ import { useScrollLogic } from '@/hooks/useScrollLogic';
 import { useMenuToggle } from '@/hooks/useMenuToggle';
 import { MobileMenu } from './MobileMenu';
 import { useConsent } from '@/context/ConsentContext';
-import { useScrollspy } from '@/hooks/useScrollspy';
 import clsx from 'clsx';
 
 // --- Icon component for the Logo ---
@@ -22,7 +21,7 @@ export const navItems = [
   { name: 'Projects', href: 'projects' },
 ];
 
-export const scrollToSection = (id: string) => {
+export const scrollToSection = (id: string) => { // Exported for use in MobileMenu
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
@@ -31,9 +30,9 @@ export const scrollToSection = (id: string) => {
 
 const Header: React.FC = () => {
   // --- State and Logic Consumption ---
-  const { userHasConsented } = useConsent();
-  const { theme, toggleTheme } = useTheme(userHasConsented);
-  const { isSticky } = useScrollLogic();
+  const { userHasConsented } = useConsent(); // Using the export from ConsentContext.tsx
+  const { theme, toggleTheme } = useTheme(userHasConsented); // Passed consent state
+  const { isSticky } = useScrollLogic(); // Already correct
   const { isMenuOpen, toggleMenu, closeMenu } = useMenuToggle();
 
   // --- Class Logic Consolidation ---
