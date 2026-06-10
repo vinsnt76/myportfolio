@@ -7,15 +7,10 @@ const Welcome: React.FC = () => {
       <div className="max-w-4xl text-center px-4">
         <h1 className="text-6xl font-extrabold mb-4 dark:text-gray-100">Welcome to My Portfolio</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed" style={{ textAlign: "left" }}>
-          As a Technical Architect, Automation Consultant, and Digital Specialist,  
-          I craft robust, scalable solutions that enhance efficiency and spark innovation.
+          Looking for a digital expert who can blend AI architecture, automation, and creative campaign management into measurable business growth?
           <br /><br />
-          With over 15 years’ experience across digital marketing, workflow automation,  
-          and business development, I bring a multidisciplinary approach to solving complex challenges.
-          <br /><br />
-          My work translates technical systems into clear, measurable outcomes, empowering teams and driving actionable results.
-          <br /><br />
-          Explore my portfolio to see how I can add value to your team.
+          That’s exactly what I deliver
+
         </p>
         {/* Tailwind classes for a strong CTA button */}
         <a href="#projects" className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-xl hover:bg-blue-700 transition-colors duration-300 transform hover:scale-[1.01]">
