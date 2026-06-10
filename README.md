@@ -28,6 +28,7 @@ This project has undergone a **major structural migration** from the legacy **Pa
 - **June 2026 Upgrade**: Migrated to **Next.js 16 (React 19)** and **Node.js 22 LTS** with **Turbopack** enabled for development.
 - **Dependency Alignment**: Resolved ESLint 9 conflict with Next.js 16 and modernized TypeScript/Tailwind stack.
 - **2026 Stack Finalization**: Completed migration to ESLint 9 Flat Config, Tailwind 4.0 CSS-first engine, and native ESM.
+- **NodeNext Alignment**: Synchronized path aliases with App Router structure and enforced ESM extension rules.
 - **Hardening Pass**: Standardized React 19 ref patterns, cleaned ESM boundaries, and pruned legacy sub-dependencies.
 
 ---

@@ -1,6 +1,4 @@
-import React from 'react';
-
-const About: React.FC = () => {
+const About = () => {
   return (
     // Use standard Tailwind classes for Hero Section layout and styling
     <section id="about" className="min-h-screen pt-32 pb-16 flex items-center justify-center bg-white dark:bg-gray-900">

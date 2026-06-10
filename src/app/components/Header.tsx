@@ -1,11 +1,11 @@
 import React from 'react';
 import { Menu, X, Sun, Moon, Briefcase } from 'lucide-react';
-import { useTheme } from '@/app/lib/hooks/useTheme';
-import { useScrollLogic } from '@/app/lib/hooks/useScrollLogic';
-import { useMenuToggle } from '@/app/lib/hooks/useMenuToggle';
-import { MobileMenu } from './MobileMenu';
-import { useScrollspy } from '@/app/lib/hooks/useScrollspy';
-import { useConsent } from '@/context/ConsentContext';
+import { useTheme } from '@/hooks/useTheme.js';
+import { useScrollLogic } from '@/hooks/useScrollLogic.js';
+import { useMenuToggle } from '@/hooks/useMenuToggle.js';
+import { MobileMenu } from './MobileMenu.js';
+import { useScrollspy } from '@/hooks/useScrollspy.js';
+import { useConsent } from '@/context/ConsentContext.js';
 import clsx from 'clsx';
 
 // --- Icon component for the Logo ---
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex flex-grow justify-center space-x-6">
+        <nav className="hidden lg:flex grow justify-center space-x-6">
           {navItems.map((item) => (
             <a key={item.name} href={`#${item.href}`} onClick={() => scrollToSection(item.href)} className={clsx('text-sm font-medium hover:text-blue-400 transition-colors', textColor, { 'text-blue-400': activeSection === item.href })}>
               {item.name}
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
             {theme === 'dark' ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-gray-600" />}
           </button>
 
-          <button className={`lg:hidden p-2 ${textColor}`} onClick={toggleMenu} aria-expanded={isMenuOpen}>
+          <button className={`lg:hidden p-2 ${textColor}`} onClick={toggleMenu} aria-expanded={isMenuOpen} aria-label="Toggle mobile menu">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>

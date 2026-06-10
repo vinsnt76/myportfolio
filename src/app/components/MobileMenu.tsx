@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 // Import shared utilities exported from Header.tsx
-import { navItems, scrollToSection } from './Header'; 
+import { navItems, scrollToSection } from './Header.js'; 
 
 interface MobileMenuProps {
   isMenuOpen: boolean;

@@ -19,9 +19,11 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/app/components/*"],
+      "@/hooks/*": ["./src/app/lib/hooks/*"],
+      "@/lib/*": ["./src/app/lib/*"],
+      "@/context/*": ["./src/context/*"]
     },
     "plugins": [
       {

@@ -1,6 +1,10 @@
 // src/components/Layout.tsx
-import Head from 'next/head';
-import Header from '@/app/components/Header';
+export const metadata = {
+  title: "Vincent Baker | Portfolio",
+  description: "AI-powered automation and AEO strategies."
+};
+
+import Header from '@/components/Header.js';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -15,11 +19,6 @@ export default function Layout({
 }: LayoutProps) {
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
       <Header />
       <main className="container mx-auto px-4">{children}</main>
       <footer className="text-center py-6 text-sm text-gray-500">
