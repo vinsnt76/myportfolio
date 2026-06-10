@@ -31,9 +31,9 @@ export const scrollToSection = (id: string) => { // Exported for use in MobileMe
 
 const Header: React.FC = () => {
   // --- State and Logic Consumption ---
-  const { userHasConsented } = useConsent(); // Using the export from ConsentContext.tsx
-  const { theme, toggleTheme } = useTheme(userHasConsented); // Passed consent state
-  const { isSticky } = useScrollLogic(); // Already correct
+  const { userHasConsented } = useConsent(); 
+  const { theme, toggleTheme } = useTheme(userHasConsented); 
+  const { isSticky } = useScrollLogic(); 
   const activeSection = useScrollspy(navItems.map(item => item.href));
   const { isMenuOpen, toggleMenu, closeMenu } = useMenuToggle();
 
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex grow justify-center space-x-6">
+        <nav className="hidden lg:flex fgrow justify-center space-x-6">
           {navItems.map((item) => (
             <a key={item.name} href={`#${item.href}`} onClick={() => scrollToSection(item.href)} className={clsx('text-sm font-medium hover:text-blue-400 transition-colors', textColor, { 'text-blue-400': activeSection === item.href })}>
               {item.name}
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
             {theme === 'dark' ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-gray-600" />}
           </button>
 
-          <button className={`lg:hidden p-2 ${textColor}`} onClick={toggleMenu} aria-expanded={isMenuOpen} aria-label="Toggle mobile menu">
+          <button className={`lg:hidden p-2 ${textColor}`} onClick={toggleMenu} aria-expanded={isMenuOpen ? "true" : "false"} aria-label="Toggle mobile menu">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>

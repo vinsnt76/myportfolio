@@ -16,14 +16,24 @@
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["./src/app/components/*"],
-      "@/hooks/*": ["./src/app/lib/hooks/*"],
-      "@/lib/*": ["./src/app/lib/*"],
-      "@/context/*": ["./src/context/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@/components/*": [
+        "./src/app/components/*"
+      ],
+      "@/hooks/*": [
+        "./src/app/lib/hooks/*"
+      ],
+      "@/lib/*": [
+        "./src/app/lib/*"
+      ],
+      "@/context/*": [
+        "./src/context/*"
+      ]
     },
     "plugins": [
       {
@@ -35,7 +45,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
