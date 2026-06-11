@@ -56,7 +56,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-md">
+    <section id="contact" className="w-full flex justify-center py-20 scroll-mt-24">
+      <div className="w-full max-w-md">
       <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -93,7 +94,8 @@ const Contact: React.FC = () => {
           Send Message
         </button>
       </form>
-    </div>
+      </div>
+    </section>
   );
 };
 
