@@ -1,16 +1,26 @@
 import React from 'react';
+import Welcome from '@/components/Welcome.js';
+import About from '@/components/About.js';
+import Experience from '@/components/Experience.js';
+import Skills from '@/components/Skills.js';
+import Projects from '@/components/Projects.js';
+import Education from '@/components/Education.js';
+import Certifications from '@/components/Certifications.js';
+import Contact from '@/components/Contact.js';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-6">
-      <h1 className="text-5xl font-extrabold tracking-tight mb-4">
-        Digital Systems Engineering
-      </h1>
-
-      <p className="text-xl text-gray-600 max-w-2xl">
-        Building AI-powered automation and high-performance UX strategy.
-      </p>
+    <div className="space-y-12">
+      <Welcome />
+      <About />
+      <section id="experience" className="scroll-mt-24"><Experience /></section>
+      <section id="skills" className="scroll-mt-24 text-center"><Skills /></section>
+      <section id="projects" className="scroll-mt-24"><Projects /></section>
+      <Education />
+      <Certifications />
+      <section id="contact" className="py-20 flex justify-center scroll-mt-24 border-t border-gray-100 dark:border-gray-800">
+        <Contact />
+      </section>
     </div>
   );
 }
-

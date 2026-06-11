@@ -19,8 +19,8 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Apply headers to all routes
-        source: '/:path*',
+        // Apply security headers to all routes except static assets and metadata
+        source: '/((?!_next/static|favicon.ico).*)',
         headers: [
           // 1. Strict-Transport-Security (HSTS)
           // Forces communication over HTTPS for a long duration, protecting against protocol downgrade attacks.
@@ -49,17 +49,7 @@ const nextConfig = {
                    `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;` +
                    `font-src 'self' https://fonts.gstatic.com;` +
                    `img-src 'self' data: https://avatars.githubusercontent.com https://res.cloudinary.com;` + // Image domains from previous fix
-                   `script-src 'self' 'unsafe-eval' 'unsafe-inline';` // Next.js often requires 'unsafe-eval'/'unsafe-inline' for development/inline scripts (like the FOUC fix). Review this carefully for production.
-          },
-        ],
-      },
-      // Caching for Static Assets (e.g., images, fonts, JS/CSS bundles in _next/static)
-      {
-        source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable', // 1 year cache
+                   `script-src 'self' 'unsafe-inline';` // Removed 'unsafe-eval' for production hardening. Add it back only if specific legacy scripts or Turbopack-specific debugging requires it.
           },
         ],
       },

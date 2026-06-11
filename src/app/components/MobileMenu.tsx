@@ -39,13 +39,13 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         <ul className="flex flex-col space-y-3">
           {allNavItems.map((item) => (
             <li key={item.name}>
-              <a
-                href={`#${item.href}`}
+              <button
+                type="button"
                 onClick={() => handleLinkClick(item.href)}
-                className="block text-lg text-gray-100 py-2 hover:text-blue-400 transition-colors text-center"
+                className="block w-full text-lg text-gray-100 py-2 hover:text-blue-400 transition-colors text-center"
               >
                 {item.name}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
