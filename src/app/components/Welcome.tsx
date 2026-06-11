@@ -46,7 +46,7 @@ const Welcome: React.FC = () => {
             className="absolute -bottom-2 -right-2 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 hidden md:block"
           >
              <p className="text-[10px] font-bold text-blue-500 uppercase tracking-[0.2em]">
-               AI • Automation • UX
+               SEO. AI. PPC + SEM
              </p>
           </motion.div>
         </motion.div>
@@ -61,18 +61,18 @@ const Welcome: React.FC = () => {
           >
             {/* Personal Tagline */}
             <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wide border border-blue-100 dark:border-blue-800">
-              AI Architect & Automation Strategist
+              AI & Digital Specialist
             </span>
 
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
-              Turning AI + UX into <br />
+              Turning search campaigns & content <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-purple-600">
-                measurable growth.
+                into AEO‑driven growth.
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
-              I design high-performance AI systems and automation strategies that bridge technical complexity with creative campaign execution.
+              I build campaigns and AEO strategies engineered for visibility, clarity, and measurable growth.
             </p>
           </motion.div>
 
