@@ -33,9 +33,9 @@ export const scrollToSection = (id: string) => { // Exported for use in MobileMe
 
 const Header: React.FC = () => {
   // --- State and Logic Consumption ---
-  const { userHasConsented } = useConsent(); 
-  const { theme, toggleTheme } = useTheme(userHasConsented); 
-  const { isSticky } = useScrollLogic(); 
+  const { userHasConsented } = useConsent(); // Using the export from ConsentContext.tsx
+  const { theme, toggleTheme } = useTheme(userHasConsented); // Passed consent state
+  const { isSticky } = useScrollLogic(); // Already correct
   const activeSection = useScrollspy(navItems.map(item => item.href));
   const { isMenuOpen, toggleMenu, closeMenu } = useMenuToggle();
 
@@ -54,61 +54,31 @@ const Header: React.FC = () => {
         )}
       >
         {/* Logo / Brand Name */}
-        <button
-          type="button"
-          onClick={() => scrollToSection('welcome')}
-          className={clsx('flex items-center space-x-2 text-lg font-bold tracking-tight pr-4', textColor)}
-        >
+        <a href="#welcome" onClick={() => scrollToSection('welcome')} className={`flex items-center space-x-2 text-lg font-bold ${textColor} tracking-tight pr-4`}>
           <VinnieIcon className="text-blue-400" />
           <span>Vinnie Baker</span>
-        </button>
+        </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex grow justify-center space-x-6">
+        <nav className="hidden lg:flex flex-grow justify-center space-x-6">
           {navItems.map((item) => (
-            <button
-              type="button"
-              key={item.name}
-              onClick={() => scrollToSection(item.href)}
-              className={clsx(
-                'text-sm font-medium transition-colors hover:text-blue-400',
-                activeSection === item.href ? 'text-blue-400' : textColor
-              )}
-            >
+            <a key={item.name} href={`#${item.href}`} onClick={() => scrollToSection(item.href)} className={clsx('text-sm font-medium hover:text-blue-400 transition-colors', textColor, { 'text-blue-400': activeSection === item.href })}>
               {item.name}
-            </button>
+            </a>
           ))}
         </nav>
 
         {/* Right-Side Controls */}
         <div className="flex items-center space-x-3">
-          <button
-            type="button"
-            onClick={() => scrollToSection('contact')}
-            className="bg-white text-gray-900 text-sm font-semibold py-2 px-4 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 whitespace-nowrap"
-          >
+          <button onClick={() => scrollToSection('contact')} className="bg-white text-gray-900 text-sm font-semibold py-2 px-4 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 whitespace-nowrap">
             Contact
           </button>
 
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className={clsx(
-              'p-2 rounded-full transition-colors',
-              theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
-            )}
-            aria-label="Toggle theme"
-          >
+          <button onClick={toggleTheme} className={`p-2 rounded-full transition-colors ${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`} aria-label="Toggle theme">
             {theme === 'dark' ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-gray-600" />}
           </button>
 
-          <button
-            type="button"
-            className={clsx('lg:hidden p-2', textColor)}
-            onClick={toggleMenu}
-            aria-expanded={isMenuOpen ? "true" : "false"}
-            aria-label="Toggle mobile menu"
-          >
+          <button className={`lg:hidden p-2 ${textColor}`} onClick={toggleMenu} aria-expanded={isMenuOpen} aria-label="Toggle mobile menu">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
