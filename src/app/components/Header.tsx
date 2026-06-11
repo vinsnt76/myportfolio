@@ -8,28 +8,13 @@ import { useMenuToggle } from '@/hooks/useMenuToggle.js';
 import { MobileMenu } from './MobileMenu.js';
 import { useScrollspy } from '@/hooks/useScrollspy.js';
 import { useConsent } from '@/context/ConsentContext.js';
+import { navItems, scrollToSection } from '@/app/navigation.js';
 import clsx from 'clsx';
 
 // --- Icon component for the Logo ---
 const VinnieIcon = ({ className }: { className: string }) => (
   <Briefcase size={20} className={className} />
 );
-
-// --- Shared Data and Utilities ---
-export const navItems = [
-  { name: 'Welcome', href: 'welcome' },
-  { name: 'About', href: 'about' },
-  { name: 'Experience', href: 'experience' },
-  { name: 'Skills', href: 'skills' },
-  { name: 'Projects', href: 'projects' },
-];
-
-export const scrollToSection = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-};
 
 const Header: React.FC = () => {
   const { userHasConsented } = useConsent();
@@ -65,7 +50,7 @@ const Header: React.FC = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex grow justify-center space-x-6">
+        <nav className="hidden lg:flex flex-grow justify-center space-x-6">
           {navItems.map((item) => (
             <button
               key={item.name}
@@ -103,7 +88,13 @@ const Header: React.FC = () => {
             {theme === 'dark' ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-gray-600" />}
           </button>
 
-          <button type="button" className={clsx('lg:hidden p-2', textColor)} onClick={toggleMenu} aria-expanded={isMenuOpen} aria-label="Toggle mobile menu">
+          <button
+            type="button"
+            className={clsx('lg:hidden p-2', textColor)}
+            onClick={toggleMenu}
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle mobile menu"
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
