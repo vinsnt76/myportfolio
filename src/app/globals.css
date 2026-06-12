@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-body {
-  color: white;
-  background: radial-gradient(
+.dark body {
+  background: 
+    radial-gradient(
       circle at 20% 20%,
       rgba(0, 102, 255, 0.25),
       transparent 60%
