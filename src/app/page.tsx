@@ -1,12 +1,12 @@
 import React from 'react';
-import Welcome from '@/components/Welcome.js'; // Use alias and .js extension
-import About from '@/components/About.js';
-import Experience from '@/components/Experience.js';
-import Skills from '@/components/Skills.js';
-import Projects from '@/components/Projects.js';
-import Education from '@/components/Education.js';
-import Certifications from '@/components/Certifications.js';
-import Contact from '@/components/Contact.js';
+import Welcome from '@/app/components/Welcome';
+import About from '@/app/components/About';
+import Experience from '@/app/components/Experience';
+import Skills from '@/app/components/Skills';
+import Projects from '@/app/components/Projects';
+import Education from '@/app/components/Education';
+import Certifications from '@/app/components/Certifications';
+import Contact from '@/app/components/Contact';
 
 export default function Page() { // Ensure default export is named 'Page' for App Router
   return (

@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { scrollToSection } from '@/app/navigation.js';
+import { scrollToSection } from '@/app/navigation';
 import clsx from 'clsx';
 
 const Welcome: React.FC = () => {
@@ -15,7 +15,7 @@ const Welcome: React.FC = () => {
       {/* Hero Header Background Image Integration */}
       <div className="absolute inset-0 -z-20">
         <img
-          src="\profile-background- header.jpg"
+          src="/profile-background-header.jpg"
           alt="Portfolio Header Background"
           className="absolute inset-0 w-full h-full object-cover"
         />

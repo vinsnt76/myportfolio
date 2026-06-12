@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass } from 'lucide-react';
-import { scrollToSection } from '@/app/navigation.js';
+import { scrollToSection } from '@/app/navigation';
 import clsx from 'clsx';
 
 const About: React.FC = () => {

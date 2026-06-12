@@ -2,7 +2,7 @@
 
 import React from 'react';
 import clsx from 'clsx';
-import { navItems, scrollToSection } from '@/app/navigation.js';
+import { navItems, scrollToSection } from '@/app/navigation';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;

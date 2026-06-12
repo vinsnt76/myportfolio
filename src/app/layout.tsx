@@ -1,7 +1,7 @@
 import React from 'react';
 import './globals.css';
-import { ConsentProvider } from '@/context/ConsentContext.js';
-import Header from '@/components/Header.js'; // Ensure correct alias and .js extension
+import { ConsentProvider } from '@/context/ConsentContext';
+import Header from '@/app/components/Header';
 
 export const metadata = {
   title: 'Vincent Baker | Portfolio',

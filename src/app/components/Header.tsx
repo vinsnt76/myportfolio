@@ -2,14 +2,19 @@
 
 import React from 'react';
 import { Menu, X, Sun, Moon, Briefcase } from 'lucide-react';
-import { useTheme } from '@/hooks/useTheme.js';
-import { useScrollLogic } from '@/hooks/useScrollLogic.js';
-import { useMenuToggle } from '@/hooks/useMenuToggle.js';
-import { MobileMenu } from './MobileMenu.js';
-import { useScrollspy } from '@/hooks/useScrollspy.js';
-import { useConsent } from '@/context/ConsentContext.js';
-import { navItems, scrollToSection } from '@/app/navigation.js';
+import { useTheme } from '@/hooks/useTheme';
+import { useScrollLogic } from '@/hooks/useScrollLogic';
+import { useMenuToggle } from '@/hooks/useMenuToggle';
+import { MobileMenu } from './MobileMenu';
+import { useScrollspy } from '@/hooks/useScrollspy';
+import { useConsent } from '@/context/ConsentContext';
+import { navItems, scrollToSection } from '@/app/navigation';
 import clsx from 'clsx';
+
+type NavItem = {
+  name: string;
+  href: string;
+};
 
 // --- Icon component for the Logo ---
 const VinnieIcon = ({ className }: { className: string }) => (
@@ -19,9 +24,9 @@ const VinnieIcon = ({ className }: { className: string }) => (
 const Header: React.FC = () => {
   // --- State and Logic Consumption ---
   const { userHasConsented } = useConsent();
-  const { theme, toggleTheme } = useTheme(userHasConsented);
+  const { theme, toggleTheme } = useTheme();
   const { isSticky } = useScrollLogic();
-  const activeSection = useScrollspy(navItems.map(item => item.href));
+  const activeSection = useScrollspy(navItems.map((item: NavItem) => item.href));
   const { isMenuOpen, toggleMenu, closeMenu } = useMenuToggle();
 
   // --- Class Logic Consolidation ---
