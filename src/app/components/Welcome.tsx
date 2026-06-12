@@ -12,11 +12,22 @@ const Welcome: React.FC = () => {
       id="welcome" 
       className="relative min-h-[90vh] flex flex-col justify-center items-center overflow-hidden"
     >
-      {/* 5. Soft Background Treatment */}
-      <div className="absolute inset-0 -z-10 bg-linear-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-950 dark:to-black" />
-      
-      {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-blue-400/10 blur-[120px] rounded-full -z-10" />
+      {/* Hero Header Background Image Integration */}
+      <div className="absolute inset-0 -z-20">
+        <img
+          src="\profile-background- header.jpg"
+          alt="Portfolio Header Background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Subtle overlay for content readability and depth */}
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
+      </div>
+
+      {/* Optional: Animated Glows */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-600/20 blur-[160px] animate-pulse-slow rounded-full" />
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-400/20 blur-[140px] animate-pulse-slower rounded-full" />
+      </div>
 
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-16">
         
