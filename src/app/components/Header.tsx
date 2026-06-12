@@ -1,10 +1,8 @@
 "use client";
-
-import React from 'react';
-import { useTheme } from "@/hooks/useTheme";
+import { useThemeContext } from "@/context/ThemeContext";
 
 export default function Header() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useThemeContext();
 
   return (
     <header className="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">

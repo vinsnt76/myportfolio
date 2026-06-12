@@ -21,6 +21,7 @@ export const useTheme = () => {
     
     // Sync with DOM and Persistence
     document.documentElement.classList.toggle('dark', theme === 'dark');
+    document.documentElement.style.colorScheme = theme;
     localStorage.setItem('theme', theme);
   }, [theme]);
 
