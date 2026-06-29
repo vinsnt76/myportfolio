@@ -9,7 +9,7 @@ interface ProjectCardProps {
   date: string;
   summary: string;
   outcomes: string[];
-  value: string;
+  value?: string;
   skills?: string[];
   imageSrc?: string;
   videoSrc?: string;
