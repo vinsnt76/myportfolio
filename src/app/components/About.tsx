@@ -36,16 +36,16 @@ const About: React.FC = () => {
       description: "Landing in the dynamic world of business development, I honed my skills in strategy, negotiation, and understanding market needs.",
     },
     {
-      icon: TrendingUp,
-      title: "Digital Marketing Pivot",
-      period: "COVID-19 Era",
-      description: "When the world shifted during COVID-19, I saw an opportunity, diving deep into digital marketing, mastering SEO and campaign strategies at an award-winning agency.",
-    },
-    {
       icon: ShoppingCart,
       title: "E-commerce Builder",
       period: "Post-Pandemic",
       description: "Applying my newfound expertise, I even built a thriving e-commerce venture with my partner, experiencing the challenges and triumphs of online business firsthand.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Digital Marketing Pivot",
+      period: "COVID-19 Era",
+      description: "When the world shifted during COVID-19, I saw an opportunity, diving deep into digital marketing, mastering SEO and campaign strategies at an award-winning agency.",
     },
     {
       icon: Brain,
@@ -98,27 +98,22 @@ const About: React.FC = () => {
             className="text-lg md:text-xl text-neutral-700 leading-relaxed space-y-6 text-left" // Left-aligned, spacing, and text color
           >
             <p>
-              My story began far from the digital world, travelling across continents and
-              fueling a deep curiosity for diverse cultures and problem‑solving.
+              At the dawn of the internet, I was travelling across Australia and the world, opening myself up to new cultures and developing a deep curiosity for problem‑solving and creating new pathways.
             </p>
             <p>
-              This led me to the dynamic world of business development in the travel
-              industry, where I honed my skills in strategy, negotiation, and understanding
-              market needs.
+              This curiosity led me into the dynamic world of Business Development in the travel industry, where I helped clients with digital marketing campaigns and jumped on the tools to bring those campaigns to life.
             </p>
             <p>
-              I later built a thriving e‑commerce venture with my partner, experiencing the
-              challenges and triumphs of online business firsthand.
+              As my family grew, I launched an ecommerce venture with my wife, learning firsthand the technical challenges and triumphs of running an online business from the ground up.
             </p>
             <p>
-              When the world shifted during COVID‑19, I saw an opportunity and dove deep
-              into digital marketing, mastering SEO and campaign strategy at an
-              award‑winning agency.
+              When the world shifted during COVID‑19 and people stopped flying, I took the opportunity to reskill in digital marketing, focusing on SEO, campaign strategy, and execution—using my own business as the testing ground for success.
             </p>
             <p>
-              Today, my focus is sharper: harnessing the power of digital to build
-              high‑performance campaigns and AEO strategies that generate leads, increase
-              purchases, and scale impact.
+              For the last several years, I’ve been working as a Digital Specialist for an award‑winning agency, building my technical and strategic capabilities across UX, conversion rate optimisation, and most recently, AI automation and architecture.
+            </p>
+            <p>
+              Today, my focus is on utilising the skills I’ve gained across all these disciplines to build high‑performance campaigns and AEO strategies that generate leads, increase purchases, and scale impact.
             </p>
           </motion.div>
 
@@ -133,7 +128,7 @@ const About: React.FC = () => {
           >
             <h3 className="text-2xl md:text-3xl font-bold mb-10 text-left">My Evolution: A Digital Odyssey</h3>
             {/* Timeline line */}
-            <div className="absolute left-4 top-0 h-full w-0.5 bg-blue-500 hidden md:block" />
+            <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-blue-500 hidden md:block" />
             <div className="space-y-12 pl-8 md:pl-0"> 
               {timelineItems.map((step, index) => (
                 <motion.div
